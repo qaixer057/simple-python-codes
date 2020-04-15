@@ -1,2 +1,2 @@
 # simple-python-codes
-Simple Python Codes for routine tasks.
+This repo contains simple python codes for routine tasks. Specically when working with Computer Vision related tasks one needs to resize images, denoise and other manipulation tools which require additional modules. So this repo contains some commonly used codes.
