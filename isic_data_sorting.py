@@ -65,3 +65,5 @@ for line in open("D:\\ISIC_2019_Training_GroundTruth.csv").readlines()[1:]:
         )
 
 print("Completed")
+
+# end of file
