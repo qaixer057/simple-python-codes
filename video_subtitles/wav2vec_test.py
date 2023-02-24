@@ -43,3 +43,12 @@ srt_file.append(
     )
 )
 srt_file.save("video.srt", encoding="utf-8")
+
+"""
+# need to try Whisper, Vosk, and Nvidia NeMO
+import whisper
+
+model = whisper.load_model("base")
+result = model.transcribe("opto_sessions_ep_69_excerpt.wav")
+print(result["text"])
+"""
