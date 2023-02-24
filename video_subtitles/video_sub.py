@@ -11,7 +11,7 @@ recognizer = sr.Recognizer()
 with sr.AudioFile("temp_audio.wav") as source:
     audio_data = recognizer.record(source)
     print("Recognizing audio data...")
-    transcript = recognizer.recognize_google(audio_data, language="en-US")
+    transcript = recognizer.recognize_bing(audio_data, language="en-US")
 
 print("writing to external srt file...")
 srt_file = pysrt.SubRipFile()
