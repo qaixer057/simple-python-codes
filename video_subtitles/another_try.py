@@ -1,6 +1,7 @@
 import moviepy.editor as mp
 import pysrt
 import datetime
+import time
 
 # Load video file
 video = mp.VideoFileClip("video.mp4")
