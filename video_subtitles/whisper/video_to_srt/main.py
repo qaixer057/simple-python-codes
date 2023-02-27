@@ -41,16 +41,16 @@ def audio_to_srt(video_path: str, save_format="srt"):
         with open(srt_path, "w", encoding="utf-8") as srt:
             write_srt(result["segments"], file=srt)
             srt.close()
+        print(f"Srt-File saved to {srt_path}")
     elif save_format == "vtt":
         vtt_name = video_path[:-4]
         vtt_path = os.path.join(output_dir, f"{slugify(vtt_name)}.vtt")
         with open(vtt_path, "w", encoding="utf-8") as vtt:
             write_vtt(result["segments"], file=vtt)
+            vtt.close()
+        print(f"VTT-File saved to {vtt_path}")
     else:
         print("Please enter a subtitle format rule.")
-
-    print(f"Srt-File saved to {srt_path}")
-    print(f"VTT-File saved to {vtt_path}")
 
 
 t1 = time.time()
