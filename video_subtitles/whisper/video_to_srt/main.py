@@ -55,7 +55,7 @@ def audio_to_srt(video_path: str, save_format="srt"):
 
 t1 = time.time()
 # audio_to_srt("video.mp4")
-audio_to_srt("video.mp4", save_format="vtt")
+audio_to_srt("video.mp4", save_format="srt")
 t2 = time.time()
 
 print(f"file generation took {t2-t1} seconds")
