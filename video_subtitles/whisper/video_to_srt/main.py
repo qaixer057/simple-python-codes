@@ -3,7 +3,7 @@ import whisper
 from whisper.tokenizer import LANGUAGES, TO_LANGUAGE_CODE
 import warnings
 import time
-from utils import slugify, write_srt, write_vtt, break_lin
+from utils import slugify, write_srt, write_vtt, break_line
 import moviepy
 import librosa
 import moviepy.editor as mp
