@@ -2,6 +2,7 @@ import os
 import whisper
 from whisper.tokenizer import LANGUAGES, TO_LANGUAGE_CODE
 import warnings
+import time
 
 # import yt_dlp
 from utils import slugify, write_srt, write_vtt, break_line
@@ -43,4 +44,9 @@ def audio_to_srt(video_path, save_format="srt"):
     print(f"file saved to {srt_path}")
 
 
-audio_to_srt("video.mp4")
+t1 = time.time()
+# audio_to_srt("video.mp4")
+audio_to_srt("andrew_ng.mp4")
+t2 = time.time()
+
+print(f"file generation took {t2-t1} seconds")
