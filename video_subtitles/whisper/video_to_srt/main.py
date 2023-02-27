@@ -3,12 +3,7 @@ import whisper
 from whisper.tokenizer import LANGUAGES, TO_LANGUAGE_CODE
 import warnings
 import time
-
-# import yt_dlp
-from utils import slugify, write_srt, write_vtt, break_line
-
-# import tempfile
-
+from utils import slugify, write_srt, write_vtt, break_lin
 import moviepy
 import librosa
 import moviepy.editor as mp
@@ -54,7 +49,6 @@ def audio_to_srt(video_path: str, save_format="srt"):
 
 
 t1 = time.time()
-# audio_to_srt("video.mp4")
 audio_to_srt("video.mp4", save_format="srt")
 t2 = time.time()
 
