@@ -20,7 +20,7 @@ model_name = "base"
 model = whisper.load_model(model_name)
 
 
-def video_to_audio(video_path):
+def video_to_audio(video_path: str):
     video = mp.VideoFileClip(video_path)
     audio = video.audio.write_audiofile("temp_audio.wav")
     temp_file = "temp_audio.wav"
@@ -30,23 +30,32 @@ def video_to_audio(video_path):
     return input_audio
 
 
-def audio_to_srt(video_path, save_format="srt"):
+def audio_to_srt(video_path: str, save_format="srt"):
     audio = video_to_audio(video_path)
     result = model.transcribe(audio)
-    # srt_path = os.getcwd()
     output_dir = os.getcwd()
-    srt_name = video_path[:-4]
-    srt_path = os.path.join(output_dir, f"{slugify(srt_name)}.srt")
+
     if save_format == "srt":
+        srt_name = video_path[:-4]
+        srt_path = os.path.join(output_dir, f"{slugify(srt_name)}.srt")
         with open(srt_path, "w", encoding="utf-8") as srt:
             write_srt(result["segments"], file=srt)
             srt.close()
-    print(f"file saved to {srt_path}")
+    elif save_format == "vtt":
+        vtt_name = video_path[:-4]
+        vtt_path = os.path.join(output_dir, f"{slugify(vtt_name)}.vtt")
+        with open(vtt_path, "w", encoding="utf-8") as vtt:
+            write_vtt(result["segments"], file=vtt)
+    else:
+        print("Please enter a subtitle format rule.")
+
+    print(f"Srt-File saved to {srt_path}")
+    print(f"VTT-File saved to {vtt_path}")
 
 
 t1 = time.time()
 # audio_to_srt("video.mp4")
-audio_to_srt("andrew_ng.mp4")
+audio_to_srt("video.mp4", save_format="vtt")
 t2 = time.time()
 
 print(f"file generation took {t2-t1} seconds")

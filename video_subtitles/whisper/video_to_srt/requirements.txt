@@ -1,0 +1,6 @@
+librosa==0.10.0
+moviepy==1.0.3
+numpy==1.23.5
+scipy==1.10.1
+soundfile==0.12.1
+whisper==1.1.10
