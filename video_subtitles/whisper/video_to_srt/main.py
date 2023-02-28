@@ -2,6 +2,7 @@ import os
 import whisper
 from whisper.tokenizer import LANGUAGES, TO_LANGUAGE_CODE
 import warnings
+import sys
 import time
 from utils import slugify, write_srt, write_vtt, break_line
 import moviepy
@@ -48,8 +49,12 @@ def audio_to_srt(video_path: str, save_format="srt"):
         print("Please enter a subtitle format rule.")
 
 
-t1 = time.time()
-audio_to_srt("video.mp4", save_format="srt")
-t2 = time.time()
-
-print(f"file generation took {t2-t1} seconds")
+if __name__ == "__main__":
+    try:
+        t1 = time.time()
+        audio_to_srt("video.mp4", save_format="srt")
+        t2 = time.time()
+        print(f"file generation took {t2-t1} seconds")
+    except KeyboardInterrupt:
+        pass
+    sys.exit()
