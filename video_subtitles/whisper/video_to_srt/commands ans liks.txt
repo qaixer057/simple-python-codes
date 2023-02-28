@@ -1,0 +1,3 @@
+# To download audio from a remote URL video
+
+ffmpeg -i https://staging3.sdsol.com/EquipEducation/Content/Uploads/Attachments/LessonAttachment/videoplayback(1).mp4 -c:a copy audiofile.m4a
