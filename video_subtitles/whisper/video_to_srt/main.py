@@ -52,7 +52,7 @@ def audio_to_srt(video_path: str, save_format="srt"):
 if __name__ == "__main__":
     try:
         t1 = time.time()
-        audio_to_srt("video.mp4", save_format="vtt")
+        audio_to_srt("videoplayback(1).mp4", save_format="vtt")
         t2 = time.time()
         print(f"file generation took {t2-t1} seconds")
     except KeyboardInterrupt:
