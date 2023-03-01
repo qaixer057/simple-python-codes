@@ -21,6 +21,7 @@ def video_to_audio(video_path: str):
     audio = video.audio.write_audiofile("temp_audio.wav")
     temp_file = "temp_audio.wav"
     data = wavfile.read(temp_file)
+    # whisper and wav2vec2 expexts an audio with sr of 16kHz
     input_audio, _ = librosa.load(temp_file, sr=16000)  # sr = sampling rate
     os.remove(temp_file)
     return input_audio
