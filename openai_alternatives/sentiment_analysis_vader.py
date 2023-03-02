@@ -1,5 +1,6 @@
 # pip install vaderSentiment
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import time
 
 
 def sentiment_vader(sentence):
@@ -33,9 +34,13 @@ sentences = [
     "I can't stand homework",  # neutral by vader and negative by openai
 ]
 
+time_start = time.time()
 for sentence in sentences:
     result = sentiment_vader(sentence)
     print("#################################")
     print(sentence)
     print(result)
     print("##################################")
+time_end = time.time()
+
+print(f"Time taken: {time_end - time_start} seconds")
