@@ -1,5 +1,6 @@
 # pip install vaderSentiment
 # https://pypi.org/project/text2emotion/ for more emotions
+#  Happy, Angry, Sad, Surprise and Fear.
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import time
 
