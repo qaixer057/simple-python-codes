@@ -1,4 +1,5 @@
 # pip install textblob
+# https://pypi.org/project/NRCLex/ for more detailed analysis
 from textblob import TextBlob
 import time
 
