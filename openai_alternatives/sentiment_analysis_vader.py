@@ -1,4 +1,5 @@
 # pip install vaderSentiment
+# https://pypi.org/project/text2emotion/ for more emotions
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import time
 
