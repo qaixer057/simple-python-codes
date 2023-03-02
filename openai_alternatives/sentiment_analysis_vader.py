@@ -1,6 +1,7 @@
+# pip install vaderSentiment
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-# calculate the negative, positive, neutral and compound scores
+
 def sentiment_vader(sentence):
 
     # Create a SentimentIntensityAnalyzer object.
