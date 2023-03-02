@@ -1,5 +1,5 @@
 from typing import Iterator, TextIO
-
+# functions taken from https://github.com/m1guelpf/yt-whisper/blob/main/yt_whisper/cli.py
 
 def write_srt(transcript: Iterator[dict], file: TextIO, line_length: int = 0):
     for i, segment in enumerate(transcript, start=1):
